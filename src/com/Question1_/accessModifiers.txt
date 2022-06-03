@@ -1,0 +1,20 @@
+Q1) Explain the difference between IS-A and Has-A relationship with the help of an
+example and explain about access modifiers and their accessibility?
+
+
+=>
+
+1) IS-A relationship = 
+   1)In IS-A relationship the Inheritence is introduced this relationship is like a Parent-Child relationship.
+  2) In this relationship the the child classe inherit the Property of the Parent Class.
+
+2)HAS-A relationship = 
+    1)In HAS-A relationship the method overloading concept introduces.
+    2) In this concept the two or more methods in a class having a same name but the parameters are different.
+
+
+# Access Modifiers = 
+    1) Public  = In this modifier the members are accessible from inside or outside of the packages.
+    2) Private = In this modifier the members are accesssibe only inside the class.
+    3) default= In this modifier the membes are a accessible only inside the packges.
+    4)Protected = In this modifier the members are accessible inside the packages but if we extends the class of the package in another class package then it also accessible.
