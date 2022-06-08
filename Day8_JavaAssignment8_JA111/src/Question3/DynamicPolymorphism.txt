@@ -1,0 +1,5 @@
+Q3) Explain dynamic polymorphism ?
+
+
+=>
+Dynamic polymorphism is a process or mechanism in which a call to an overridden method is to resolve at runtime rather than compile-time.

@@ -1,0 +1,11 @@
+Q2) Explain ClassCastException with the help of the example.
+
+=>
+ClassCastException is a runtime exception raised in Java when we try to improperly cast a class from one type to 
+another. Its thrown to indicate that the code has attempted to cast an object to a related class, but of which it is not an instance.
+
+Example =>
+
+String[] strArray = new String[] { "Yash", "Snow" };
+ArrayList<String> strList = (ArrayList<String>) Arrays.asList(strArray);
+System.out.println("String list: " + strList);
