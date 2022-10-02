@@ -1,0 +1,62 @@
+// Given two strings, find whether one string (s2) can be formed by rotating another string(s1).
+
+//Example:For s1=”carbon”, s2=”boncar”, the output is "Yes" (without quotes)
+
+import java.util.*;
+ 
+public class Main {
+ 
+   
+    static void check(String str1, String str2)
+    {
+            int n = str1.length();
+    int n1 = str2.length();
+    int mid =(int) Math.floor(n/2);
+    int mid1 = (int)Math.floor(n1/2);
+
+   
+    if(n==n1)
+    {
+         int j = mid1;
+         boolean temp = false;
+    for(int i=0; i<mid; i++)
+    {
+        if(str1.charAt(i)==str2.charAt(j))
+        {
+          temp = true;
+          j++;
+        }
+        else
+        {
+          temp = false;
+        }
+    }
+    if(temp == true)
+    {
+        System.out.println("Yes");
+    }
+    else
+    {
+        System.out.println("No");
+    }
+
+
+    }
+    else
+    {
+        System.out.println("No");
+    }
+    
+       
+    }
+   
+    public static void main(String[] args)
+    {
+        
+           String str  = "carbon";
+           String str1 = "boncar" ;
+
+       check(str,str1);
+
+    }
+}
