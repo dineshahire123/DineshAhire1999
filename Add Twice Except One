@@ -1,0 +1,49 @@
+//Enter code here
+
+import java.util.*;
+
+
+class Main{
+    
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        
+        int tc = sc.nextInt();
+        
+        for(int j=0; j<tc; j++)
+        {
+            int n = sc.nextInt();
+            
+            int[] arr = new int[n];
+            
+            for(int i=0; i<n; i++)
+            {
+                arr[i] = sc.nextInt();
+            }
+            
+            check(n,arr);
+        }
+    }
+    
+    
+    public static void check(int n, int[] arr)
+    {
+         HashMap<Integer, Integer> hashmap = new HashMap<>();
+    
+        for(int i=0; i<n; i++)
+        {
+            Integer a = arr[i];
+            hashmap.put(a, hashmap.getOrDefault(a,0) + 1);
+        }
+        
+        for(Integer a : hashmap.keySet()){
+            
+            if(hashmap.get(a)==1)
+            {
+                System.out.println(a);
+            }
+        
+        }
+    }
+}
