@@ -1,0 +1,58 @@
+
+
+
+import java.io.*;
+import java.lang.*;
+import java.util.*;
+
+class Main{
+  public static void check(int N, String str){
+    //write your code here
+ 
+     String bag = "";
+     int i, j;
+    for( i=0; i<N; i++)
+    {
+        int  count = 0;
+      
+       for( j=i; j<N; j++)
+       {
+         if(str.charAt(i) == str.charAt(j))
+         {
+             count++;
+             
+         }
+         else
+         {
+            break;
+         }
+       }
+       i=j-1;
+        //      System.out.println("j " + j);
+        //   System.out.println("i " + i);
+                
+
+        
+       bag = bag + str.charAt(i)+count ;
+    }
+    System.out.println(bag);
+        
+      
+   
+
+  }
+  
+      public static void main(String[]args){
+        Scanner sc = new Scanner(System.in);
+      
+             int tc = sc.nextInt(); 
+        for(int b=0; b<tc; b++)
+      {
+      
+        int n = sc.nextInt();
+       String str = sc.next();
+      
+     check(n,str);
+      }
+    }
+}
