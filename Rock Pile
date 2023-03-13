@@ -1,0 +1,50 @@
+//Enter code here
+
+
+import java.util.*;
+
+class Main{
+    
+    
+    public static void check(int n, String arr)
+    {
+        int count = 0;
+       
+       for(int i=0; i<n; i++)
+       {
+           if(arr.charAt(i) == '+')
+           {
+               count++;
+           }
+           else
+           {
+               count--;
+           }
+           
+           if(count < 0)
+           {
+               count = 0;
+           }
+           
+       }
+       System.out.println(count);
+    }
+    
+    public static void main(String[] args)
+    {
+        
+        Scanner sc = new Scanner(System.in);
+        
+        int tc = sc.nextInt();
+        
+        for(int i=0; i<tc; i++)
+        {
+            int n = sc.nextInt();
+            String str = sc.next();
+            
+           
+            check(n,str);
+        }
+        
+    }
+}
