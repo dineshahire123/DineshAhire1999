@@ -1,0 +1,70 @@
+//Enter code here
+import java.util.*;
+ 
+public class Main {
+    
+    
+           public static boolean Palindrome(String str, int s, int e)
+           {
+               while(s <= e)
+               {
+                   if(str.charAt(s) != str.charAt(e))
+                   {
+                       return false;
+                   }
+                   s++;
+                   e--;
+               }
+               return true;
+           }
+ 
+   
+   public static boolean check(int n, String str)
+    {
+           int left = 0;
+           int right = str.length()-1;
+           
+           while(left <= right)
+           {
+               if(str.charAt(left) != str.charAt(right))
+               {
+                   return Palindrome(str,left+1, right) || Palindrome(str,left, right-1);
+                   
+                    
+               }
+               left++;
+               right--;
+           }
+           return true;
+          
+    }
+   
+    public static void main(String[] args)
+    {
+        
+        Scanner sc = new Scanner(System.in);
+      
+      int tc = sc.nextInt();
+      
+      for(int j=0; j<tc; j++)
+      {
+            int n = sc.nextInt();
+            String str = sc.next();
+       
+       
+        boolean ans =  check(n,str);
+            
+            
+            if(ans == true)
+            {
+                System.out.println("YES");
+            }
+            else
+            {
+                System.out.println("NO");
+            }
+            
+      }
+  
+    }
+}
