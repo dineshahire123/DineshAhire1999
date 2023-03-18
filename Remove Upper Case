@@ -1,0 +1,20 @@
+function removeUppercase(N, str) {
+  //write code here
+  
+   
+   var lower = "abcdefghijklmnopqrstuvwxyz";
+   var bag = "";
+   for(i=0; i<N; i++)
+   {
+       
+       for(j=0; j<lower.length; j++)
+       {
+           if(str[i]==lower[j])
+           {
+              bag = bag + lower[j];
+           }
+         
+       }
+   }
+   console.log(bag);
+}
