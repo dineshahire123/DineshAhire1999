@@ -1,0 +1,21 @@
+function vowelHalf(N, str) {
+  //write code here
+  var a = N/2;
+  var vowel = 0;
+  for(i=0; i<N; i++)
+  {
+      if(str[i]=="a"||str[i]=="e"||str[i]=="i"||str[i]=="o"||str[i]=="u")
+      {
+          vowel++;
+      }
+      
+  }
+  if(vowel>a)
+  {
+      console.log("True");
+  }
+  else
+  {
+      console.log("False");
+  }
+}
