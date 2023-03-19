@@ -1,0 +1,64 @@
+//Enter code here
+
+
+function runProgram(input){
+    input = input.trim().split("\n");
+  
+    var count = 0;
+    var count1 = 0;
+    var a = "";
+    var b = input[1];
+    
+    for(i=1; i<input.length; i++)
+    {
+        if(input[1]!=input[i])
+        {
+            a = input[i];
+        }
+    }
+   
+    for(i=1; i<input.length; i++)
+    {
+        if(input[i]==a)
+        {
+            count++;
+        }
+        if(input[i]==b)
+        {
+            count1++;
+        }
+        
+    }
+    if(count>count1)
+    {
+        console.log(a);
+    }
+    else
+    {
+        console.log(b)
+    }
+    
+}
+
+
+
+if (process.env.USER === "") {
+  runProgram(``);
+} else {
+  process.stdin.resume();
+  process.stdin.setEncoding("ascii");
+  let read = "";
+  process.stdin.on("data", function (input) {
+    read += input;
+  });
+  process.stdin.on("end", function () {
+    read = read.replace(/\n$/, "");
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+  });
+  process.on("SIGINT", function () {
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+    process.exit(0);
+  });
+}
