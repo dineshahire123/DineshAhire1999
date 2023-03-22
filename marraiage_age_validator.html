@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input value="" placeholder="age" type="number" id="age" />
+    <select id="select">
+        <option value="null">--</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+    
+
+    </select>
+    <p id="first" style="color:green"></p>
+    <p id="second"></p>
+    <p id="third" style="color:red"></p>
+    <hr/>
+    <button onclick="check()">Submit</button>
+    
+
+</body>
+</html>
+
+<script>
+    function check()
+    {
+        var result=document.getElementById("age").value
+        var gender=document.getElementById("select").value
+        if(result>=18 && gender=="female" || result>=21 && gender=="male")
+        {
+           document.getElementById("first").innerText="Can Marray"
+        }
+       
+        if(result<18 && gender=="female" || result<21 && gender=="male")
+        {
+            document.getElementById("third").innerText="Can't Get Marry"
+        }
+      
+    }
+    
+</script>
