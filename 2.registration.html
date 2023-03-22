@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Registration</title>
+  </head>
+  <body>
+    <input type="text"  id="name" placeholder="name" value=""/>
+    <select id="gender">
+      <option value="">--</option>
+      <option value="male">M</option>
+      <option value="female">F</option>
+    </select>
+    <input type="text" name="email" id="email" value="" placeholder="email"/>
+    <input type="text" name="mobile" id="mobile" value="" placeholder="mobile"/>
+    <hr />
+    <h1 id="dName">NAME</h1>
+    <h2 id="dGender">GENDER
+      <select id="select">
+        <option>--</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+    </h2>
+    <h3 id="dEmail">EMAIL</h3>
+    <h4 id="dMobile">MOBILE</h4>
+    <hr />
+    <button onclick="showName()">NAME</button>
+    <button onclick="showGender()">GENDER</button>
+    <button onclick="showEmail()">EMAIL</button>
+    <button onclick="showMobile()">MOBILE</button>
+    <button onclick="resetForm()">RESET FORM</button>
+    <button onclick="resetDisplay()">RESET DISPLAY</button>
+    <script type="text/javascript">
+      function showName() {
+        // Show filled name inside h1
+
+      var arr=document.getElementById("name").value
+
+       document.getElementById("dName").innerText=arr;
+      
+      }
+
+      function showGender() {
+        // Show the selected gender inside h2
+       var a=document.getElementById("select").value;
+       document.getElementById("dGender").innerText=a;
+
+      }
+
+      function showEmail() {
+        // Show the filled email inside h3
+        var c=document.getElementById("email").value
+
+        document.getElementById("dEmail").innerText=c
+      }
+
+      function showMobile() {
+        // Show the filled mobile inside h4
+       var fun=document.getElementById("mobile").value
+       document.getElementById("dMobile").innerText=fun
+      }
+
+      function resetForm() {
+        // Reset all the form elements to default values (blank "")
+       console.log(document.getElementById("dName").innerText="NAME")
+        console.log(document.getElementById("dGender").innerText="GENDER")
+        console.log(document.getElementById("dEmail").innerText="EMAIL")
+        console.log(document.getElementById("dMobile").innerText="MOBILE")
+
+       
+      }
+
+      function resetDisplay() {
+        // Reset all the headings (h1, h2, h3, h4) to blank values
+        console.log(document.getElementById("dName").innerText="");
+        console.log(document.getElementById("dGender").innerText="");
+        console.log(document.getElementById("dEmail").innerText="");
+        console.log(document.getElementById("dMobile").innerText="")
+      }
+    </script>
+  </body>
+</html>
