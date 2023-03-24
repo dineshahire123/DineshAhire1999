@@ -1,0 +1,62 @@
+import java.util.Scanner;
+  
+public class Main {
+    
+    
+    
+    public static void check(int n,int[][] arr)
+    {
+        // System.out.println(arr.toString());
+        
+        for(int i=n-1; i>=0; i--)
+        {
+            String bag = "";
+            for(int j=0; j<n; j++)
+            {
+                bag = bag + arr[j][i] + " ";
+            }
+            
+            System.out.println(bag);
+        }
+    }
+
+    
+    
+    
+    
+  
+    // Function to read matrix
+    public static void main(String[] args)
+    {
+        int n, i, j;
+        Scanner in = null;
+        try {
+            in = new Scanner(System.in);
+            // System.out.println("Enter the number "
+            //                   + "of rows of the matrix");
+            // m = in.nextInt();
+            // // System.out.println("Enter the number "
+            // //                   + "of columns of the matrix");
+             n = in.nextInt();
+  
+            // Declare the matrix
+            int first[][] = new int[n][n];
+  
+            // Read the matrix values
+            // System.out.println("Enter the elements of the matrix");
+            for (i = 0; i < n; i++)
+                for (j = 0; j < n; j++)
+                    first[i][j] = in.nextInt();
+  
+            // Display the elements of the matrix
+            //System.out.println("Elements of the matrix are");
+         
+            check(n,first);
+        }
+        catch (Exception e) {
+        }
+        finally {
+            in.close();
+        }
+    }
+}
