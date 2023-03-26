@@ -1,0 +1,37 @@
+import java.util.*;
+import java.io.*;
+import java.lang.*;
+
+class Main{
+    
+    public static void check1(int n, String str, String bag, int index)
+    {
+        int m = bag.length();
+          if(n == index)
+          {
+              return;
+          }
+          
+          if(!bag.isEmpty() && bag != "")
+          {
+              System.out.println(bag);
+          }
+          
+      for(int i=index+1; i<n; i++)
+      {
+          bag = bag + str.charAt(i);
+          check1(n,str,bag,i);
+           bag = bag.substring(0,m);
+      }
+    }
+    
+    public static void main(String arg[])
+    {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        String str = sc.next();
+        String bag = "";
+        int index = -1;
+        check1(n,str,bag,index);
+    }
+}
