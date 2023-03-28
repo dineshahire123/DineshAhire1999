@@ -1,0 +1,47 @@
+//Enter code here
+
+function runProgram(input) {
+ 
+   var N = +input;
+//   console.log(N);
+ console.log(check(N));
+
+}
+
+
+function check(N)
+{
+    if(N==0)
+    {
+        return(0);
+    }
+    if(N==1)
+    {
+        return (1);
+    }
+     if(N>1)
+     {
+         return check(N-1) + check(N-2);
+     }
+}
+
+if (process.env.USER === "") {
+  runProgram(``);
+} else {
+  process.stdin.resume();
+  process.stdin.setEncoding("ascii");
+  let read = "";
+  process.stdin.on("data", function (input) {
+    read += input;
+  });
+  process.stdin.on("end", function () {
+    read = read.replace(/\n$/, "");
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+  });
+  process.on("SIGINT", function () {
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+    process.exit(0);
+  });
+}
