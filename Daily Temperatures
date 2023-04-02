@@ -1,0 +1,57 @@
+//Enter code here
+import java.util.*;
+ 
+public class Main {
+ 
+   static void check(int n,int[] arr) {
+
+//   System.out.println(Arrays.toString(arr));
+
+    Stack<Integer> st = new Stack<Integer>();
+    
+    int brr[] = new int[n];
+    
+    for(int i=0; i<n; i++)
+    {
+        while(!st.isEmpty() && arr[st.peek()] < arr[i])
+        {
+            Integer index = st.pop();
+            int diff = i - index;
+            brr[index] = diff;
+        }
+        st.push(i);
+    }
+
+while(!st.isEmpty())
+{
+    Integer index = st.pop();
+    brr[index] = 0;
+}
+
+for(int i=0; i<brr.length; i++)
+{
+    System.out.print(brr[i] + " ");
+}
+ 
+ System.out.println();
+
+}
+    public static void main(String[] args)
+    {
+        
+        Scanner sc = new Scanner(System.in);
+      int tc = sc.nextInt();
+      for(int j=0; j<tc; j++)
+      {
+            int n = sc.nextInt();
+             int[] arr = new int[n];
+             for(int i=0; i<n; i++)
+             {
+                 arr[i] = sc.nextInt();
+             }
+         
+       check(n,arr);
+}
+      
+    }
+}
