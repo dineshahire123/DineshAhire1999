@@ -1,0 +1,23 @@
+function mapCharAndSum(N,K,str) {
+    // Write code here
+    
+    var s = "abcdefghijklmnopqrstuvwxyz";
+    var obj = {};
+    
+    
+    var x = N;
+    for(var i=0; i<s.length; i++)
+    {
+        obj[s[i]]=x;
+        x++;
+         
+    }
+    
+    var sum = 0;
+    for(var i=0; i<str.length; i++)
+    {
+        sum = sum + obj[str[i]];
+        
+    }
+    console.log(sum);
+}
