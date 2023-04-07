@@ -1,0 +1,19 @@
+function sumOfCornerColumns(N,M,arr){
+    //write code here
+ var bag = 0;
+   for(i=0; i<N; i++)
+   {
+       for(j=0; j<M; j++)
+       { 
+           if(j===0)
+           {
+           bag = bag + arr[i][j];
+           }
+          if(j===M-1)
+           {
+               bag = bag + arr[i][j];
+           }
+       }
+   }
+   console.log(bag);
+}
