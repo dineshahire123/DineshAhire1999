@@ -1,0 +1,27 @@
+class Solution {
+    public int majorityElement(int[] nums) {
+
+     Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+
+      for(int i=0; i<nums.length; i++)
+      {
+          int c = nums[i];
+          map.put(c,map.getOrDefault(c,0) + 1);
+      }
+
+     int max = -1;
+     int ans = -1;
+    for(Map.Entry<Integer, Integer> m1 : map.entrySet())
+{
+
+     if(m1.getValue() > max)
+     {
+         max = m1.getValue();
+         ans = m1.getKey();
+     }
+}
+
+return ans;
+    }
+
+}
