@@ -1,0 +1,55 @@
+//Enter code here
+
+import java.util.*;
+
+class Main{
+
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        
+        int n = sc.nextInt();
+        
+        int[] arr = new int[n];
+        
+        for(int i=0; i<n; i++)
+         {
+             arr[i] = sc.nextInt();
+         }
+         check(n,arr);
+         
+    }
+    
+    public static void check(int n, int[] arr)
+    {
+        int min = 10000000;
+        int ans = -1;
+        for(int i=0; i<n; i++)
+        {
+            int sum = 0;
+            for(int j=0; j<n; j++)
+            {
+                if(i==j)
+                {
+                    continue;
+                }
+                else
+                {
+                    sum = sum + arr[j];
+                }
+            }
+            // System.out.println("Sum " + sum);
+            if(sum%7 == 0)
+            {
+                // System.out.println("divisible " + sum);
+                if(arr[i] < min)
+                {
+                    min = arr[i];
+                    ans = i;
+                    // System.out.println("max " + max );
+                }
+            }
+        }
+        System.out.println(ans);
+    }
+}
