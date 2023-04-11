@@ -1,0 +1,17 @@
+function mapSymbols(N) {
+    // Write code here
+    var arr = ['!','@','#','$','%','^','&','*']
+    var obj = {};
+    
+    for(i=0; i<arr.length; i++)
+    {
+        var key = arr[i]
+        obj[key] = N;
+        N = N+2;
+    }
+    
+    for(key in obj)
+    {
+        console.log(key+'-'+obj[key]);
+    }
+}
