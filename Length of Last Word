@@ -1,0 +1,29 @@
+class Solution {
+    public int lengthOfLastWord(String s) {
+       s = s.trim();
+       int count = 0;
+       String small = "abcdefghijklmnopqrstuvwxyz";
+        String capital = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        for(int i=s.length()-1; i>=0; i--)
+        {
+            boolean flag = false;
+            for(int j=0; j<small.length(); j++)
+            {
+             if(s.charAt(i) == small.charAt(j) || s.charAt(i) == capital.charAt(j))
+             {
+               flag = true;
+             }
+            }
+            if(flag == true)
+            {
+               count++;
+            }
+            else
+            {
+                break;
+            }
+        }   
+        return count;
+    }
+      
+}
