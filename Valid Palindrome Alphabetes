@@ -1,0 +1,42 @@
+class Solution {
+    public boolean isPalindrome(String s) {
+         String bag = "";
+         String small = "abcdefghijklmnopqrstuvwxyz";
+         String capital = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+         for(int i=0; i<s.length(); i++)
+        {
+          for(int j=0; j<small.length(); j++)
+          {
+          if(s.charAt(i) == small.charAt(j) || s.charAt(i) == capital.charAt(j))
+          {
+           bag = bag + s.charAt(i);
+              break;
+          }
+          else
+          {
+           continue;  
+          }
+          }
+        }  
+
+         String bag1 = "";
+         for(int i=bag.length()-1; i>=0; i--)
+        {
+          bag1 = bag1 + bag.charAt(i);
+        }   
+      System.out.println(bag);
+        System.out.println(bag1);
+      if(bag.equalsIgnoreCase(bag1))
+      {
+        return true;
+      }
+      else
+      {
+          return false;
+      }
+    
+         
+        
+    }
+}
