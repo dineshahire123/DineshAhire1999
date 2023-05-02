@@ -1,0 +1,46 @@
+//Enter code here
+import java.util.*;
+
+class Main{
+    
+    
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        
+        int n = sc.nextInt();
+        
+        String str = sc.next();
+        check(n,str);
+    }
+    
+    
+    public static void check(int n, String str)
+    {
+        for(int i=0; i<str.length(); i++)
+        {
+            if(str.charAt(i) == '@')
+            {
+                n = n*10;
+            }
+            else if(str.charAt(i) == '!')
+            {
+                n = n+2;
+            }
+            else if(str.charAt(i) == '%')
+            {
+                n = n-5;
+            }
+            else if(str.charAt(i) == '^')
+            {
+                n = n*n;
+            }
+            else if(str.charAt(i) == '$')
+            {
+                n = n+37;
+            }
+            
+        }
+        System.out.println(n);
+    }
+}
