@@ -1,0 +1,28 @@
+//Enter code here
+
+import java.util.*;
+
+
+class Main{
+    
+    
+    public static void main(String[] args)
+    {
+        Scanner  sc = new Scanner(System.in);
+        
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        
+        
+        int speed = n/m;
+        
+        if(speed > 40)
+        {
+            System.out.println("Apply Brake");
+        }
+        else
+        {
+            System.out.println("Keep Going");
+        }
+    }
+}
