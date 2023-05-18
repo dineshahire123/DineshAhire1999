@@ -1,0 +1,37 @@
+//Enter code here
+import java.util.*;
+
+
+class Main{
+    
+    
+    public static void main(String[] args){
+        
+      Scanner sc = new Scanner(System.in);
+      
+      int n = sc.nextInt();
+      
+      int m = sc.nextInt();
+      
+      int l = sc.nextInt();
+      int w = sc.nextInt();
+      
+      check(n,m,l,w);
+    }
+    
+    public static void check(int n, int m, int l, int w)
+    {
+        if(l>n  && w>m)
+        {
+            System.out.println("print Upload");
+        }
+        else if(n>l)
+        {
+            System.out.println("Increase Length");
+        }
+        else if(m>w)
+        {
+            System.out.println("Increase Width");
+        }
+    }
+}
