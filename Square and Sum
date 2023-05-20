@@ -1,0 +1,33 @@
+//Enter code here
+
+import java.util.*;
+
+class Main{
+    
+    
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        
+        int n = sc.nextInt();
+        
+        int m = sc.nextInt();
+        
+        int l = sc.nextInt();
+        
+        check(n,m,l);
+    }
+    
+    
+    public static void check(int n, int m, int l)
+    {
+       n = n*n;
+       m = m*m;
+       l = l*l;
+       
+       
+       int sum = n + m + l;
+       
+       System.out.println(sum);
+    }
+}
