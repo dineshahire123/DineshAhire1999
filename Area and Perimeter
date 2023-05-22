@@ -1,0 +1,43 @@
+//Enter code here
+
+import java.util.*;
+
+class Main{
+    
+    
+    public static void main(String[] args)
+    {
+        
+        Scanner sc = new Scanner(System.in);
+        
+        int l1 = sc.nextInt();
+        int b1 = sc.nextInt();
+        
+        int l2 = sc.nextInt();
+        int b2 = sc.nextInt();
+        
+        check(l1,b1,l2,b2);
+    }
+    
+    public static void check(int l1, int b1, int l2, int b2)
+    {
+        if((l1*b1) > (l2 * b2) )
+        {
+            System.out.println(true);
+        }
+        else
+        {
+            System.out.println(false);
+        }
+        
+        
+        if((2*(l1 + b1)) > (2*(l2 + b2)))
+        {
+               System.out.println(true);
+        }
+         else
+        {
+            System.out.println(false);
+        }
+    }
+}
