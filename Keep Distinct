@@ -1,0 +1,30 @@
+//Enter code here
+
+import java.util.*;
+
+class Main{
+    
+    public static void main(String[] args)
+    {
+        Scanner sc  = new Scanner(System.in);
+        
+         String str = sc.next();
+        check(str);
+    }
+    
+    public static void check(String str)
+    {
+           Set<Character> set = new HashSet<>();
+      StringBuilder ans = new StringBuilder();
+    for (int i = 0; i < str.length(); i++)
+    {
+        char c = str.charAt(i);
+        if (!set.contains(c))
+        {
+            set.add(c);
+            ans.append(c);
+        }
+    }
+      System.out.println(ans.toString());
+    }
+}
