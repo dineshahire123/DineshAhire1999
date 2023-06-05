@@ -1,0 +1,55 @@
+/*
+class Node{
+  int data;
+  Node next;
+  
+  public Node(int data,Node next){
+    this.data = data;
+    this.next = next;
+  }
+  public Node(int data){
+    this.data = data;
+    this.next = null;
+  }
+  public Node(){
+    this.data = 0;
+    this.next = null;
+  }
+}
+*/
+
+class Solution{
+    
+    public static int check(Node head)
+    {
+        int count = 0;
+        while (head != null) {
+            head = head.next;
+            count++;
+        }
+        return count;
+    }
+    
+    
+  public static Node deleteNode(Node head){
+
+       if (head == null)
+            return null;
+        if (head.next == null) {
+            return null;
+        }
+        Node a = head;
+
+        int count = check(head);
+
+        int mid = count / 2;
+
+        while (mid-- > 1) {
+            head = head.next;
+        }
+ 
+        head.next = head.next.next;
+ 
+        return a;
+  }
+}
