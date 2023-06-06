@@ -1,0 +1,76 @@
+//Enter code here
+
+
+
+function runProgram(input){
+    let n = +input ; 
+    let board = [];
+    for(let i = 0 ; i<n ; i++){
+        let arr = [];
+        for(let j = 0 ; j<n ; j++){
+            arr.push(0);
+        }
+        board.push(arr)
+    }
+    NQueens(board,0)
+    console.log(count)
+}
+var count = 0 ;
+let NQueens = (board,row)=>{
+    if(row === board.length){
+        count++;
+        return ; 
+    }
+    for(var i = 0 ; i<board.length ; i++){
+        if(IsSafe(board,row,i)===true){
+            board[row][i] = 1;
+            NQueens(board,row+1)
+            board[row][i] = 0;
+        }
+    }
+   
+}
+let IsSafe = (board,row,col)=>{
+    //vertical
+    for(let i = 0 ; i<row ; i++){
+        if(board[i][col]===1){
+            return false;
+        }
+    }
+    //right diagonal
+    for(var i = row-1, j = col+1 ;i>=0 && j<board.length ; i--,j++ ){
+        if(board[i][j]===1){
+            return false;
+        }
+    }
+    //left diagonal 
+    for(var k = row-1 , l = col-1 ; k>=0 && l>=0 ; k--,l--){
+        if(board[k][l]===1){
+            return false ;
+        }
+    }
+    return true ;
+}
+
+ 
+
+if (process.env.USER === "") {
+  runProgram(``);
+} else {
+  process.stdin.resume();
+  process.stdin.setEncoding("ascii");
+  let read = "";
+  process.stdin.on("data", function (input) {
+    read += input;
+  });
+  process.stdin.on("end", function () {
+    read = read.replace(/\n$/, "");
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+  });
+  process.on("SIGINT", function () {
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+    process.exit(0);
+  });
+}
