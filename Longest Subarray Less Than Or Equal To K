@@ -1,0 +1,31 @@
+ class LongestSubarrayLessThanOrEqualToK {
+    public static int longestSubarray(int[] nums, int k) {
+        int start = 0;
+        int end = 0;
+        int maxLength = 0;
+
+        while (end < nums.length) {
+            if (nums[end] <= k) {
+                end++;
+            } else {
+                start = end + 1;
+                end = start;
+            }
+
+            int length = end - start;
+            if (length > maxLength) {
+                maxLength = length;
+            }
+        }
+
+        return maxLength;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {2, 3, 1, 5, 4, 6, 8};
+        int k = 5;
+
+        int maxLength = longestSubarray(nums, k);
+        System.out.println("Length of the longest subarray less than or equal to " + k + ": " + maxLength);
+    }
+}
