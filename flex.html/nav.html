@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container
+        {
+            height: 100px;
+            width: 80%;
+            background-color: black;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .container > div
+        {
+            
+            width: 30%;
+            height: 100%;
+            color: white;
+            padding: 30px;
+        }
+
+        .container > div:nth-child(1)
+        {
+        
+            font-size:25px;
+            font-weight: bold;
+        }
+        .container > div:last-child
+       {
+           
+        display: flex;
+        justify-content: space-around;
+
+        }
+
+        select
+        {
+            background-color: black;
+            color: white;
+            border:0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+  <div>Mag Width</div>
+  <div></div>
+  <div>
+      <div>Home</div>
+      <div>About</div>
+      <div>Block</div>
+      <div>
+        <select>
+            <option value="">Page</option>
+            <option value="">first</option>
+            <option value="">second</option>
+          </select>
+      </div>
+  </div>
+</div>
+
+</body>
+</html>

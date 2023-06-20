@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .container
+    {
+       display: grid;
+       grid-template-columns: repeat(3,200px);
+       grid-template-rows: repeat(2,100px);
+       /* grid-row-gap: 20px;
+       grid-column-gap: 20px; */
+       gap: 20px 40px;
+       
+    }
+
+    .container > div
+    {
+        color: white;
+        font-size: 20px;
+        text-align: center;
+        padding: 2px;
+        border-radius: 10px;
+    
+    }
+
+    .container > div:nth-child(1)
+    {
+       background-color: green;
+       grid-area: 1/1/2/3;
+    }
+    .container > div:nth-child(2)
+    {
+       background-color: rgb(26, 38, 218);
+    grid-area: 1/3/3/4;
+    }  
+    .container > div:nth-child(3)
+    {
+       background-color: rgb(245, 117, 32);
+    
+    }
+    .container > div:nth-child(4)
+    {
+       background-color: rgb(14, 4, 6);
+
+    }
+    .container > div:nth-child(5)
+    {
+       background-color: rgb(62, 75, 27);
+     
+    }
+    .container > div:nth-child(6)
+    {
+       background-color: rgb(221, 26, 59);
+ 
+    }
+    .container > div:nth-child(7)
+    {
+       background-color: rgb(199, 218, 36);
+    }
+    .container > div:nth-child(8)
+    {
+       background-color: rgb(2, 53, 2);
+    }
+  
+    </style>
+</head >
+<body>
+  <div class="container">
+   <div>A</div>
+   <div>B </div>
+   <div>C</div>
+   <div>D</div>
+   
+  
+  
+  </div>
+</body>
+</html>
