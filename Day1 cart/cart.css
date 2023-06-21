@@ -1,0 +1,147 @@
+
+#cart1
+{
+    display: flex;
+    justify-content: space-evenly;
+    height: 350px;
+    width: 60%;
+     margin: auto;
+     margin-top: 10%;
+     /* border: 1px solid red; */
+     box-shadow:  rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;;
+}
+
+
+#cart2
+{
+/* border: 1px solid black; */
+width: 40%;
+height: auto;
+}
+
+#h2
+{
+    margin-left: 5%;
+}
+
+
+#cart3
+{
+   /* border: 1px solid red; */
+   width: 40%;
+   height: auto;
+   margin-right: 5%;
+   margin-top: 5%;
+}
+
+#cartbtn
+{
+    background-color: #df1e2e;
+    width: 60%;
+    height: 50px;
+    border-radius: 5px;
+    color: white;
+    margin-top: 15%;
+    margin-left: 10%;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#cartbtn:hover
+{
+    background-color: rgb(172, 56, 56);
+}
+
+
+
+
+
+
+#cart-pop1
+{
+    height: 350px;
+    width: 70vh;
+    justify-content: center;
+    align-items: center;
+    margin-left: 26%;
+     margin-top: 10%;
+    border: 1px solid white;
+    box-shadow: rgba(0, 0, 0, 0.2) 10px 20px 30px;
+    border-radius: 5px;
+}
+
+#cart-pop2
+{
+    height: 250px;
+    width: 100%;
+    /* margin-left: 9%; */
+    margin-top: 8%;
+    /* border: 1px solid black; */
+ }  
+
+
+
+
+
+
+#cart-pop3
+{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(3,1fr);
+    /* border: 1px solid black; */
+    border-radius: 5px;
+    justify-content: space-evenly;
+     gap: 30px; 
+    
+}
+
+.cart-a1
+{
+    border: 2px solid blue;
+    color: blue;
+    text-align: center;
+    height: 30px;
+    width: 100%;
+    
+}
+
+    .popup
+    {
+        position: relative;
+        top: 50vh;
+        width: 75%;
+        height: 100%;
+        background: none;
+        /* overflow: hidden; */
+        transition: all 0ms ease-in-out 1.5s;
+
+    }
+
+    .popup .p1
+    {
+        position: absolute;
+        top: 150%;
+        left: 70%;
+        transform: translate(-50%,-50%);
+        padding: 20px;
+        width: 600px;
+        background: white;
+        border-radius: 10px;
+        transition: all 150ms ease-in-out 0ms;
+
+    }
+
+    body.xyz .popup
+    {
+        top: 0px;
+
+        transition: all 0ms ease-in-out 0ms;
+    }
+
+
+    body.xyz .popup .p1
+    {
+        top: 50%;
+        transition: all 300ms ease-in-out 300ms;
+    }
