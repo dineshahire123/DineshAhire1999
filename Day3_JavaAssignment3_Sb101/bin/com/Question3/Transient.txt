@@ -1,0 +1,7 @@
+Q.Explain Transient KeyWord.
+=>  
+   transient keyword:
+This keyword is applicable only for the variables, at the time of serialization if we don't want to save the
+original value of a particular variable for some security reason, such type of variable we should declare
+with transient keyword..
+ 
