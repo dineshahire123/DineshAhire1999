@@ -1,0 +1,41 @@
+//Enter code here
+
+import java.util.*;
+
+
+class Main{
+    
+   public static void main(String[] args)
+   {
+       Scanner sc  = new Scanner(System.in);
+       
+       int n  = sc.nextInt();
+       
+     
+       check(n);
+   }
+   
+   
+   public static void check(int n)
+   {
+     if(n == 0)
+     {
+         System.out.println("-1");
+     }
+     else
+     {
+         double x = Math.floor(32/n);
+         
+         if(x == 0)
+         {
+             System.out.println("Too Low");
+         }
+         else
+         {
+             System.out.println((int)x);
+         }
+     }
+     
+        
+   }
+}
