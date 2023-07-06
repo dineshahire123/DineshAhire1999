@@ -1,0 +1,48 @@
+//Enter code here
+ function runProgram(input){
+     
+    input = input.split("\n");
+    var x = input[1].split(" ").map(Number);
+    
+    
+    
+    var bag = "";
+    for(i=0; i<x.length; i++)
+    {
+          if(x[i]<0)
+          {
+            bag = bag + "0" ;
+          }
+          else
+          {
+              bag = bag + x[i] ;
+          }
+         
+    }
+  console.log(bag);
+
+}
+ 
+
+
+
+if (process.env.USER === "") {
+  runProgram(``);
+} else {
+  process.stdin.resume();
+  process.stdin.setEncoding("ascii");
+  let read = "";
+  process.stdin.on("data", function (input) {
+    read += input;
+  });
+  process.stdin.on("end", function () {
+    read = read.replace(/\n$/, "");
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+  });
+  process.on("SIGINT", function () {
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+    process.exit(0);
+  });
+}
