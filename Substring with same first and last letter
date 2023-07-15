@@ -1,0 +1,29 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class SubstringWithSameFirstAndLastLetter {
+    public static List<String> findSubstrings(String input) {
+        List<String> substrings = new ArrayList<>();
+        
+        for (int i = 0; i < input.length(); i++) {
+            for (int j = i + 1; j <= input.length(); j++) {
+                String substring = input.substring(i, j);
+                if (substring.length() > 1 && substring.charAt(0) == substring.charAt(substring.length() - 1)) {
+                    substrings.add(substring);
+                }
+            }
+        }
+        
+        return substrings;
+    }
+    
+    public static void main(String[] args) {
+        String input = "abccba";
+        List<String> substrings = findSubstrings(input);
+        
+        System.out.println("Substrings with the same first and last letter:");
+        for (String substring : substrings) {
+            System.out.println(substring);
+        }
+    }
+}
