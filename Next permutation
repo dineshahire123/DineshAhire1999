@@ -1,0 +1,48 @@
+import java.util.Arrays;
+
+public class NextPermutation {
+
+    public static void nextPermutation(int[] nums) {
+        // Find the first element from the right that is smaller than its next element
+        int i = nums.length - 2;
+        while (i >= 0 && nums[i] >= nums[i + 1]) {
+            i--;
+        }
+
+        if (i >= 0) {
+            // Find the first element from the right that is greater than nums[i]
+            int j = nums.length - 1;
+            while (j >= 0 && nums[j] <= nums[i]) {
+                j--;
+            }
+            // Swap nums[i] and nums[j]
+            swap(nums, i, j);
+        }
+
+        // Reverse the sub-array from i+1 to the end
+        reverse(nums, i + 1);
+    }
+
+    private static void swap(int[] nums, int i, int j) {
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+    }
+
+    private static void reverse(int[] nums, int start) {
+        int i = start;
+        int j = nums.length - 1;
+        while (i < j) {
+            swap(nums, i, j);
+            i++;
+            j--;
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {1, 2, 3};
+        System.out.println("Current permutation: " + Arrays.toString(nums));
+        nextPermutation(nums);
+        System.out.println("Next permutation: " + Arrays.toString(nums));
+    }
+}
