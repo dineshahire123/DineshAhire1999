@@ -1,0 +1,33 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class ElementCounter {
+    public static void main(String[] args) {
+        int[] arr = { 1, 2, 3, 2, 4, 1, 5, 2, 3 };
+
+        Map<Integer, Integer> elementCountMap = countElements(arr);
+
+        // Printing the element count
+        for (Map.Entry<Integer, Integer> entry : elementCountMap.entrySet()) {
+            System.out.println("Element: " + entry.getKey() + ", Count: " + entry.getValue());
+        }
+    }
+
+    public static Map<Integer, Integer> countElements(int[] arr) {
+        Map<Integer, Integer> elementCountMap = new HashMap<>();
+
+        // Loop through the array to count occurrences of elements
+        for (int element : arr) {
+            // If the element is already in the map, increment its count
+            if (elementCountMap.containsKey(element)) {
+                int count = elementCountMap.get(element);
+                elementCountMap.put(element, count + 1);
+            } else {
+                // If the element is not in the map, add it with count 1
+                elementCountMap.put(element, 1);
+            }
+        }
+
+        return elementCountMap;
+    }
+}
