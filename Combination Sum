@@ -1,0 +1,44 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class CombinationSum {
+
+    public List<List<Integer>> combinationSum(int[] candidates, int target) {
+        List<List<Integer>> result = new ArrayList<>();
+        Arrays.sort(candidates);
+        backtrack(result, new ArrayList<>(), candidates, target, 0);
+        return result;
+    }
+
+    private void backtrack(List<List<Integer>> result, List<Integer> path, int[] candidates, int target, int start) {
+        if (target == 0) {
+            result.add(new ArrayList<>(path));
+            return;
+        }
+
+        for (int i = start; i < candidates.length; i++) {
+            if (candidates[i] > target) {
+                break;
+            }
+
+            path.add(candidates[i]);
+            backtrack(result, path, candidates, target - candidates[i], i);
+            path.remove(path.size() - 1);
+        }
+    }
+
+    public static void main(String[] args) {
+        CombinationSum combinationSum = new CombinationSum();
+
+        // Test cases
+        System.out.println(combinationSum.combinationSum(new int[]{2, 3, 6, 7}, 7));
+        // Output: [[2, 2, 3], [7]]
+
+        System.out.println(combinationSum.combinationSum(new int[]{2, 3, 5}, 8));
+        // Output: [[2, 2, 2, 2], [2, 3, 3], [3, 5]]
+
+        System.out.println(combinationSum.combinationSum(new int[]{2}, 1));
+        // Output: []
+    }
+}
